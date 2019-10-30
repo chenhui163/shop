@@ -1,4 +1,6 @@
 // pages/category/index.js
+import request from "../../utils/request.js";
+
 Page({
 
     /**
@@ -15,8 +17,15 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-
+    onLoad() {
+        // 请求商品分类数据
+        request({
+            url: "https://api.zbztb.cn/api/public/v1/categories"
+        }).then(res=>{
+            this.setData({
+                categories: res.data.message
+            })
+        })
     },
 
     /**

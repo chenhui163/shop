@@ -5,23 +5,32 @@
 <view class="container">
     <!-- 左边菜单栏 -->
     <view class="menu">
-        <view class="menu_item {{ current===index ? 'active':'' }}" wx:for="{{ [1,2,3,4,5,6,7,8] }}" wx:key="{{index}}" bindtap="changeCurrent" data-index="{{index}}">
-            大家电{{index}}
+        <view class="menu_item {{ current===index ? 'active':'' }}" wx:for="{{categories}}" 
+        wx:key="{{index}}" bindtap="changeCurrent" data-index="{{index}}">
+            {{ item.cat_name }}
         </view>
     </view>
     <!-- 右边商品列表 -->
     <view class="content">
+        <!-- 广告位 -->
         <image class="content_image"></image>
-        <view class="content_title">
-            <text>/</text>
-            电视
-            <text>/</text>
-        </view>
-        <view class="content_list">
-            <view class="list_item" wx:for="{{ [1,2,3,4,5,6] }}">
-                <image></image>
-                曲面电视
+
+        <view wx:for="{{ categories[current].children }}" wx:key="{{index}}">
+            <!-- 标题 -->
+            <view class="content_title">
+                <text>/</text>
+                {{ item.cat_name }}
+                <text>/</text>
+            </view>
+            <!-- 列表框 -->
+            <view class="content_list">
+                <navigator class="list_item" wx:for="{{ item.children }}" wx:key="{{index}}"
+                url="#">
+                    <image src="{{ item.cat_icon }}"></image>
+                    <view>{{ item.cat_name }}</view>
+                </navigator>
             </view>
         </view>
+
     </view>
 </view>
