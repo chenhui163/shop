@@ -1,0 +1,41 @@
+<!-- 搜索栏部分 -->
+<view class="search">
+    <view class="search_content">
+        <text class="iconfont iconsearch content_icon"></text>
+        <text class="content_text">搜索</text>
+    </view>
+</view>
+
+<!-- 轮播图部分 -->
+<view class="slider">
+    <swiper autoplay="autoplay" interval="3000" duration="500" 
+    indicator-dots="true" circular="true">
+        <navigator wx:for="{{slider}}" wx:key="{{index}}">
+            <swiper-item>
+                <image src="https://img.alicdn.com/tfs/TB1N45jX.H1gK0jSZSyXXXtlpXa-966-644.jpg_620x10000q100.jpg_.webp" mode="scaleToFill"></image>
+            </swiper-item>
+        </navigator>
+    </swiper>
+</view>
+
+<!-- 导航栏部分 -->
+<view class="nav">
+    <navigator wx:for="{{nav}}" wx:key="{{index}}" class="nav_item">
+        <image src="../../images/cart_empty@2x.png"></image>
+    </navigator>
+</view>
+
+<!-- 楼层部分 -->
+<view class="fashion">
+    <image src="https://img.alicdn.com/tfs/TB1N45jX.H1gK0jSZSyXXXtlpXa-966-644.jpg_620x10000q100.jpg_.webp"></image>
+    <view class="fashion_produ">
+        <navigator class="produ_first">
+            <image src="../../images/cart_empty@2x.png"></image>
+        </navigator>
+        <view class="produ_others">
+            <navigator class="others_item" wx:for="{{ [1,2,3,4] }}">
+                <image src="../../images/cart_empty@2x.png"></image>
+            </navigator>
+        </view>
+    </view>
+</view>

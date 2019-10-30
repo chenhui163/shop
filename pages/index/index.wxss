@@ -1,0 +1,92 @@
+/**
+    搜索栏样式
+*/
+.search{
+    padding: 20rpx 16rpx;
+    background: #ff2d4a;
+}
+.search_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60rpx;
+    background: #fff;
+    color: #bbbbbb;
+    border-radius: 5px;
+}
+.content_icon{
+    margin-right: 16rpx;
+    font-size: 32rpx;
+}
+.content_text{
+    font-size: 24rpx;
+}
+
+/* 
+    轮播图样式
+ */
+.slider{
+    height: 340rpx;
+    /* background: orangered; */
+}
+.slider swiper{
+    height: 100%;
+}
+.slider swiper-item image{
+    width: 100%;
+    height: 100%;
+}
+
+/* 导航栏部分 */
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30rpx 0;
+}
+.nav_item{
+    width: 100rpx;
+    height: 100rpx;
+}
+.nav_item image{
+    width: 100%;
+    height: 100%;
+}
+
+/* 时尚女装部分 */
+.fashion image{
+    width: 100%;
+    height: 90rpx;
+}
+.fashion_produ{
+    display: flex;
+    padding: 20rpx 16rpx;
+}
+.produ_first{
+    width: 232rpx;
+    height: 365rpx;
+    background: orangered;
+}
+.produ_first image{
+    width: 100%;
+    height: 100%;
+}
+.produ_others{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+.others_item{
+    padding: 0 0 10rpx 10rpx;
+    width: 50%;
+    height: 50%;
+    box-sizing: border-box;
+}
+.others_item:nth-child(3),
+.others_item:nth-child(4){
+    padding-bottom: 0;
+}
+.others_item image{
+    width: 100%;
+    height: 100%;
+}
