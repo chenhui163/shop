@@ -1,10 +1,5 @@
-<!-- 搜索栏部分 -->
-<view class="search">
-    <view class="search_content">
-        <text class="iconfont iconsearch content_icon"></text>
-        <text class="content_text">搜索</text>
-    </view>
-</view>
+<!-- 搜索栏部分-引用搜索栏组件 -->
+<search />
 
 <!-- 轮播图部分 -->
 <view class="slider">
@@ -22,7 +17,7 @@
 <!-- 导航栏部分 -->
 <view class="nav">
     <navigator wx:for="{{nav}}" wx:key="{{index}}" class="nav_item"
-    open-type="{{ item.open_type }}">
+    url="{{ item.navigator_url }}" open-type="{{ item.open_type }}">
         <image src="{{ item.image_src }}"></image>
     </navigator>
 </view>

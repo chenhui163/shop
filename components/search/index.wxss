@@ -1,0 +1,24 @@
+/* components/search/index.wxss */
+/**
+    搜索栏样式
+*/
+.search{
+    padding: 20rpx 16rpx;
+    background: #ff2d4a;
+}
+.search_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60rpx;
+    background: #fff;
+    color: #bbbbbb;
+    border-radius: 5px;
+}
+.content_icon{
+    margin-right: 16rpx;
+    font-size: 32rpx;
+}
+.content_text{
+    font-size: 24rpx;
+}

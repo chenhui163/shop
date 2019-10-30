@@ -1,0 +1,7 @@
+<!--components/search/index.wxml-->
+<view class="search">
+    <view class="search_content">
+        <text class="iconfont iconsearch content_icon"></text>
+        <text class="content_text">搜索</text>
+    </view>
+</view>
