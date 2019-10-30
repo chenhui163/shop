@@ -10,9 +10,10 @@
 <view class="slider">
     <swiper autoplay="autoplay" interval="3000" duration="500" 
     indicator-dots="true" circular="true">
-        <navigator wx:for="{{slider}}" wx:key="{{index}}">
+        <navigator wx:for="{{ slider }}" wx:key="{{index}}"
+        url="{{ item.navigator_url }}" open-type="{{ item.open_type }}">
             <swiper-item>
-                <image src="https://img.alicdn.com/tfs/TB1N45jX.H1gK0jSZSyXXXtlpXa-966-644.jpg_620x10000q100.jpg_.webp" mode="scaleToFill"></image>
+                <image src="{{ item.image_src }}" mode="scaleToFill"></image>
             </swiper-item>
         </navigator>
     </swiper>
@@ -20,22 +21,34 @@
 
 <!-- 导航栏部分 -->
 <view class="nav">
-    <navigator wx:for="{{nav}}" wx:key="{{index}}" class="nav_item">
-        <image src="../../images/cart_empty@2x.png"></image>
+    <navigator wx:for="{{nav}}" wx:key="{{index}}" class="nav_item"
+    open-type="{{ item.open_type }}">
+        <image src="{{ item.image_src }}"></image>
     </navigator>
 </view>
 
 <!-- 楼层部分 -->
-<view class="fashion">
-    <image src="https://img.alicdn.com/tfs/TB1N45jX.H1gK0jSZSyXXXtlpXa-966-644.jpg_620x10000q100.jpg_.webp"></image>
-    <view class="fashion_produ">
-        <navigator class="produ_first">
-            <image src="../../images/cart_empty@2x.png"></image>
+<view class="floor" wx:for="{{ floors }}" wx:key="{{ index }}">
+    <view class="floor_title">
+        <image src="{{ item.floor_title.image_src }}"></image>
+    </view>
+    <view class="floor_produ">
+        <navigator class="produ_first" url="{{ item.product_list[0].navigator_url }}" 
+        open-type="{{ item.product_list[0].open_type }}">
+            <image src="{{ item.product_list[0].image_src }}"></image>
         </navigator>
         <view class="produ_others">
-            <navigator class="others_item" wx:for="{{ [1,2,3,4] }}">
-                <image src="../../images/cart_empty@2x.png"></image>
+            <navigator class="others_item" wx:for="{{ item.product_list }}" 
+            wx:key="{{ index }}" wx:if="{{ index > 0 }}" url="{{ item.navigator_url }}"
+            open-type="{{ item.open-type }}">
+                <image src="{{ item.image_src }}" style="width:{{ item.image_width }}rpx"></image>
             </navigator>
         </view>
     </view>
+</view>
+
+<!-- 显示底部部分 -->
+<view class="showBottom">
+    <text class="iconfont icon"></text>
+    我是有底线的！
 </view>
