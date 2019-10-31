@@ -19,7 +19,6 @@
 }
 .search_icon{
     padding-right: 15rpx;
-    font-size: 16px;
 }
 .search_box input{
     flex: 1;
@@ -88,4 +87,10 @@
 .price_number{
     font-size: 16px;
     color: #eb4450;
+}
+
+/* 底部提示样式 */
+.tips{
+    padding: 30rpx 0;
+    text-align: center;
 }

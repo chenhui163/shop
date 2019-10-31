@@ -3,7 +3,7 @@
 <!-- 头部搜索栏 -->
 <view class="search">
     <view class="search_box">
-        <text class="iconfont iconsearch search_icon"></text>
+        <icon type="search" size="16" class="search_icon" />
         <input value="{{ query }}"/>
     </view>
 </view>
@@ -31,3 +31,7 @@
         </view>
     </navigator>
 </view>
+
+<!-- 底部提示 -->
+<view class="tips" wx:if="{{ isLoading === true }}">商品数据加载中...</view>
+<view class="tips" wx:if="{{ isMore === false }}">-我也是有底线的-</view>
