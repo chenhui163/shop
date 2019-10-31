@@ -14,11 +14,14 @@ Page({
         query: "",
         // 页码
         pagenum: 1,
-        // 获取数据条数
+        // 请求的数据条数
         pagesize: 10,
 
         // 商品列表数据
-        goods: []
+        goods: [],
+
+        // 判断是否有更多数据,默认是true
+        isMore: true
     },
 
     /**
@@ -42,8 +45,12 @@ Page({
     */
     onReachBottom() {
         
-        // 请求商品数据
-        this.getGoodsList();
+        // 如果isMore为true，说明数据还未请求完；
+        // 为false，说明已经请求完毕，不再进行数据请求
+        if(this.data.isMore){
+            // 请求商品数据
+            this.getGoodsList();
+        }
 
     },
 
@@ -59,6 +66,13 @@ Page({
         }).then(res=>{
             // 保存商品数据
             const { goods } = res.data.message;
+
+            // 如果商品列表数据的长度小于请求的数据条数，isMore的值变为false
+            if (goods.length < this.data.pagesize){
+                this.setData({
+                    isMore: false
+                })
+            }
 
             // 商品价格保留两位小数
             const newGoods = goods.map(v=>{
