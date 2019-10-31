@@ -25,7 +25,7 @@
             <!-- 列表框 -->
             <view class="content_list">
                 <navigator class="list_item" wx:for="{{ item.children }}" wx:key="{{index}}"
-                url="#">
+                url="/pages/goods_list/index?query={{ item.cat_name }}">
                     <image src="{{ item.cat_icon }}"></image>
                     <view>{{ item.cat_name }}</view>
                 </navigator>

@@ -50,7 +50,7 @@
 					"id": 0,
 					"name": "pages/goods_list/index",
 					"pathName": "pages/goods_list/index",
-					"query": "",
+					"query": "query=电视",
 					"scene": null
 				}
 			]

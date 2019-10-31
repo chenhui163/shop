@@ -6,13 +6,29 @@ Page({
      */
     data: {
         // 筛选框当前下标
-        current: 0
+        current: 0,
+
+        // 页面参数
+        query: "",
+
+        // 商品列表数据
+        goods: []
     },
 
     /**
      * 生命周期函数--监听页面加载
+     * options：页面传递过来的参数
      */
     onLoad: function (options) {
+
+        // 获取页面参数
+        const {query} = options;
+        this.setData({
+            query
+        })
+
+
+
 
     },
 
