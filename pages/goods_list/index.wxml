@@ -1,0 +1,33 @@
+<!--pages/goods_list/index.wxml-->
+
+<!-- 头部搜索栏 -->
+<view class="search">
+    <view class="search_box">
+        <text class="iconfont iconsearch search_icon"></text>
+        <input value="小米"/>
+    </view>
+</view>
+
+<!-- 筛选框 -->
+<view class="filter">
+    <view class="filter_synthesize {{ current===0 ? 'active':'' }}" bindtap="changeCrurent" 
+    data-index="0">综合</view>
+    <view class="filter_sales {{ current===1 ? 'active':'' }}" bindtap="changeCrurent" 
+    data-index="1">销量</view>
+    <view class="filter_price {{ current===2 ? 'active':'' }}" bindtap="changeCrurent" 
+    data-index="2">
+        价格
+        <image></image>
+    </view>
+</view>
+
+<!-- 商品列表 -->
+<view class="goods_list">
+    <navigator class="list_item" url="#">
+        <image></image>
+        <view class="item_text">
+            <text class="text_title">【新品上市】【双11抢先购享多重权益】Huawei/华为nova 5z 快充AI四摄4800万128G大内存华为官方旗舰店</text>
+            <text class="text_price">￥<text class="price_number">13999</text></text>
+        </view>
+    </navigator>
+</view>

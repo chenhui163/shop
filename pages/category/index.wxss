@@ -43,7 +43,7 @@
 .content{
     flex: 1;
     padding: 20rpx 16rpx;
-    width: 198rpx;
+    /* width: 198rpx; */
     height: 100%;
     overflow-y: auto;
 }

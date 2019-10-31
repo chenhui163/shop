@@ -1,4 +1,5 @@
 /* components/search/index.wxss */
+@import "../../common/style.wxss";
 /**
     搜索栏样式
 */
