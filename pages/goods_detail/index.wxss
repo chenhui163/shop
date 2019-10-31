@@ -1,0 +1,105 @@
+/* pages/goods_detail/index.wxss */
+
+/* 轮播图样式 */
+.slider{
+    padding: 10rpx 16rpx;
+}
+swiper{
+    width: 100%;
+    height: 720rpx;
+    background: orangered;
+}
+
+/* 商品信息样式 */
+.goods_info{
+    padding: 0 16rpx;
+    margin-bottom: 32rpx;
+}
+.info_price{
+    margin: 45rpx 0;
+    font-size: 18px;
+    color: #eb4450;
+}
+.info_title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40rpx;
+    height: 80rpx;
+}
+.info_title view:first-child{
+    width: 520rpx;
+    color: #363636;
+    font-size: 16px;
+    
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.title_like{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 50rpx;
+    border-left: 1px solid #dddddd;
+    color: #a0a0a0;
+}
+.title_like text:first-child{
+    font-size: 18px;
+}
+.title_like text:last-child{
+    font-size: 14px;
+}
+.info_express{
+    font-size: 14px;
+    color: #999999;
+}
+
+/* 富文本信息样式 */
+.rich_text{
+    margin-bottom: 100rpx;
+}
+
+/* 底部样式 */
+.footer{
+    display: flex;
+    height: 100rpx;
+}
+.footer_icon{
+    position: relative;
+    display: flex;
+    width: 40%;
+}
+.icon_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+    align-items: center;
+    width: 50%;
+    font-size: 12px;
+}
+/* 联系客服按钮样式 */
+.btn_kefu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    opacity: 0;
+}
+.footer_btn{
+    display: flex;
+    width: 60%;
+}
+.btn_box{
+    width: 50%;
+    text-align: center;
+    line-height: 100rpx;
+    background: #f4b73f;
+}
+.btn_box:last-child{
+    background: #eb4450;
+}

@@ -1,0 +1,49 @@
+<!--pages/goods_detail/index.wxml-->
+
+<!-- 商品轮播图 -->
+<view class="slider">
+    <swiper indicator-dots="indicatorDots" autoplay="autoplay" interval="5000"
+    duration="duration" circular="true">
+        <swiper-item wx:for="{{ [1,2,3,4,5] }}">
+            <view class="swiper-item"></view>
+        </swiper-item>
+    </swiper>
+</view>
+
+<!-- 商品信息 -->
+<view class="goods_info">
+    <view class="info_price">
+        <text>￥</text>
+        <text>999</text>
+    </view>
+    <view class="info_title">
+        <view>标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</view>
+        <view class="title_like">
+            <text class="iconfont icon-shoucang"></text>
+            <text>收藏</text>
+        </view>
+    </view>
+    <view class="info_express">快递：    免运费</view>
+</view>
+
+<!-- 商品富文本信息 -->
+<rich-text class="rich_text" nodes="<h1>富文本h1标题</h1>"></rich-text>
+
+<!-- 底部功能栏 -->
+<view class="footer">
+    <view class="footer_icon">
+        <view class="icon_box icon_service">
+            <text class="iconfont icon-kefu"></text>
+            <text>联系客服</text>
+        </view>
+        <view class="icon_box icon_cat">
+            <text class="iconfont icon-gouwuche"></text>
+            <text>购物车</text>
+        </view>
+        <button class="btn_kefu" type="primary"></button>
+    </view>
+    <view class="footer_btn">
+        <view class="btn_box">加入购物车</view>
+        <view class="btn_box">立即购买</view>
+    </view>
+</view>
