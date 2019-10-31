@@ -40,7 +40,7 @@
             <text class="iconfont icon-gouwuche"></text>
             <text>购物车</text>
         </view>
-        <button class="btn_kefu" type="primary"></button>
+        <button class="btn_kefu" open-type="contact"></button>
     </view>
     <view class="footer_btn">
         <view class="btn_box">加入购物车</view>
