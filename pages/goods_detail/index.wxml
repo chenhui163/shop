@@ -2,10 +2,11 @@
 
 <!-- 商品轮播图 -->
 <view class="slider">
-    <swiper indicator-dots="indicatorDots" autoplay="autoplay" interval="5000"
-    duration="duration" circular="true">
-        <swiper-item wx:for="{{ [1,2,3,4,5] }}">
-            <view class="swiper-item"></view>
+    <swiper indicator-dots="indicatorDots" autoplay="autoplay" interval="3000"
+    duration="500" circular="true">
+        <swiper-item wx:for="{{info.pics }}" wx:key="{{index}}">
+            <!-- <view class="swiper-item"></view> -->
+            <image src="{{ item.pics_big }}" mode="scaleToFill"></image>
         </swiper-item>
     </swiper>
 </view>
@@ -14,10 +15,10 @@
 <view class="goods_info">
     <view class="info_price">
         <text>￥</text>
-        <text>999</text>
+        <text>{{ info.goods_price }}</text>
     </view>
     <view class="info_title">
-        <view>标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</view>
+        <view>{{ info.goods_name }}</view>
         <view class="title_like">
             <text class="iconfont icon-shoucang"></text>
             <text>收藏</text>
@@ -27,7 +28,7 @@
 </view>
 
 <!-- 商品富文本信息 -->
-<rich-text class="rich_text" nodes="<h1>富文本h1标题</h1>"></rich-text>
+<rich-text class="rich_text" nodes="{{ info.goods_introduce }}"></rich-text>
 
 <!-- 底部功能栏 -->
 <view class="footer">
@@ -36,10 +37,10 @@
             <text class="iconfont icon-kefu"></text>
             <text>联系客服</text>
         </view>
-        <view class="icon_box icon_cat">
+        <navigator class="icon_box icon_cat" url="/pages/cart/index" open-type="switchTab">
             <text class="iconfont icon-gouwuche"></text>
             <text>购物车</text>
-        </view>
+        </navigator>
         <button class="btn_kefu" open-type="contact"></button>
     </view>
     <view class="footer_btn">

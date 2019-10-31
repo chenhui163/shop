@@ -9,6 +9,10 @@ swiper{
     height: 720rpx;
     background: orangered;
 }
+swiper image{
+    width: 100%;
+    height: 100%;
+}
 
 /* 商品信息样式 */
 .goods_info{
@@ -60,7 +64,7 @@ swiper{
 
 /* 富文本信息样式 */
 .rich_text{
-    margin-bottom: 100rpx;
+    padding-bottom: 300rpx;
 }
 
 /* 底部样式 */
@@ -80,6 +84,9 @@ swiper{
     align-items: center;
     width: 50%;
     font-size: 12px;
+}
+.icon_cat{
+    background: #fff;
 }
 /* 联系客服按钮样式 */
 .btn_kefu{
