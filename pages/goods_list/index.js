@@ -37,6 +37,16 @@ Page({
         this.getGoodsList();
     },
 
+    /** 
+     * 页面触底时执行
+    */
+    onReachBottom() {
+        
+        // 请求商品数据
+        this.getGoodsList();
+
+    },
+
     // 获取商品列表数据的方法
     getGoodsList(){
         request({
@@ -56,8 +66,10 @@ Page({
                 return v;
             })
 
+            // 数据请求完毕后，更新data中的商品列表数据，页码+1
             this.setData({
-                goods: [...this.data.goods, ...newGoods ]
+                goods: [...this.data.goods, ...newGoods ],
+                pagenum: this.data.pagenum + 1
             })
             console.log(this.data.goods)
 
@@ -69,7 +81,6 @@ Page({
         this.setData({
             current: +e.target.dataset.index
         })
-        console.log(e)
     }
 
 })
