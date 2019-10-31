@@ -21,7 +21,10 @@ Page({
         goods: [],
 
         // 判断是否有更多数据,默认是true
-        isMore: true
+        isMore: true,
+
+        // 判断是否是在加载中，默认是false
+        isLoading: false
     },
 
     /**
@@ -44,6 +47,12 @@ Page({
      * 页面触底时执行
     */
     onReachBottom() {
+
+        // 如果正在加载，页面触底时不再次请求数据
+        // 防止请求次数过多，减少服务器压力
+        if(this.data.isLoading === true){
+            return;
+        }
         
         // 如果isMore为true，说明数据还未请求完；
         // 为false，说明已经请求完毕，不再进行数据请求
@@ -56,6 +65,12 @@ Page({
 
     // 获取商品列表数据的方法
     getGoodsList(){
+
+        // 页面加载完毕时，将isLoading的值改为true
+        this.setData({
+            isLoading: true
+        })
+
         request({
             url: "/api/public/v1/goods/search",
             data:{
@@ -81,9 +96,11 @@ Page({
             })
 
             // 数据请求完毕后，更新data中的商品列表数据，页码+1
+            // 加载完毕后，把isLoading的值变为false
             this.setData({
                 goods: [...this.data.goods, ...newGoods ],
-                pagenum: this.data.pagenum + 1
+                pagenum: this.data.pagenum + 1,
+                isLoading: false
             })
             console.log(this.data.goods)
 
