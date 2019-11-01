@@ -1,0 +1,25 @@
+<!--pages/search/index.wxml-->
+
+<!-- 头部搜索框 -->
+<view class="search">
+    <view class="search_box">
+        <icon type="search" size="16"></icon>
+        <input type="text" placeholder="请输入你想要的商品"></input>
+    </view>
+    <view class="search_cancel">取消</view>
+</view>
+
+<!-- 历史搜索记录 -->
+<view class="history">
+    <view class="history_title">
+        <text>历史记录</text>
+        <icon type="clear" size="19"></icon>
+    </view>
+    <view class="history_list">
+        <text class="list_item">小米</text>
+        <text class="list_item">华为</text>
+        <text class="list_item">智能手环</text>
+        <text class="list_item">空气净化器</text>
+        <text class="list_item">全自动赚钱机</text>
+    </view>
+</view>

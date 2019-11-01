@@ -1,0 +1,63 @@
+/* pages/search/index.wxss */
+
+/* 头部搜索框样式 */
+.search{
+    display: flex;
+    padding: 30rpx 16rpx;
+    background: #eeeeee;
+}
+.search_box{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 20rpx;
+    height: 60rpx;
+    background: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #868686;
+}
+.search_box icon{
+    margin-right: 18rpx;
+}
+.search_box input{
+    flex: 1;
+}
+.search_cancel{
+    margin-left: 20rpx;
+    width: 160rpx;
+    box-sizing: border-box;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 58rpx; 
+    font-size: 16px; 
+    color: #333333;
+}
+
+/* 历史记录样式 */
+.history{
+    padding: 30rpx 16rpx;
+}
+.history_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32rpx;
+    font-size: 19px;
+    color: #333333;
+}
+.history_title icon{
+    margin-right: 14rpx;
+}
+.history_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.list_item{
+    padding: 22rpx 25rpx;
+    margin: 0 30rpx 18rpx 0;
+    background: #dddddd;
+    font-size: 14px;
+    color: #333333;
+}
