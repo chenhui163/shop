@@ -9,7 +9,10 @@ Page({
         isShowBtn: false,
 
         // 输入框的值
-        value: ""
+        value: "",
+
+        // 历史记录数组
+        history: []
 
     },
 
@@ -24,7 +27,12 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        // 获取本地的历史记录，如果有则获取，没有则默认空数组
+        const history = wx.getStorageSync('search') || [];
+        // 赋值给data中的history
+        this.setData({
+            history
+        })
     },
 
     // input输入时触发

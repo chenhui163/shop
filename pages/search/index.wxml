@@ -17,10 +17,7 @@
         <icon type="clear" size="19"></icon>
     </view>
     <view class="history_list">
-        <text class="list_item">小米</text>
-        <text class="list_item">华为</text>
-        <text class="list_item">智能手环</text>
-        <text class="list_item">空气净化器</text>
-        <text class="list_item">全自动赚钱机</text>
+        <navigator class="list_item" wx:for="{{ history }}"
+        url="/pages/goods_list/index?query={{ item }}">{{ item }}</navigator>
     </view>
 </view>
