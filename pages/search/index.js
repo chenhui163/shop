@@ -76,8 +76,21 @@ Page({
 
         // 跳到商品列表页
         wx.navigateTo({
-            url: "/pages/goods_list/index?query=" + value
+            url: "/pages/goods_list/index?query=" + this.data.value
         })
+    },
+
+    // 清除输入框，隐藏按钮
+    clearInput(){
+        this.setData({
+            value: "",
+            isShowBtn: false
+        })
+    },
+
+    // 清除历史记录
+    clearHistory(){
+        console.log(222)
     }
 
 })
