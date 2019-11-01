@@ -31,7 +31,7 @@
 <view class="goods">
     <view class="goods_shop">
         <view class="shop_name">
-            <text>logo</text>
+            <text class="iconfont icon-dianpu"></text>
             <text>优购生活馆</text>
         </view>
         <view class="shop_goods">
