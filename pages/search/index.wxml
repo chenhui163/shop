@@ -4,7 +4,8 @@
 <view class="search">
     <view class="search_box">
         <icon type="search" size="16"></icon>
-        <input type="text" placeholder="请输入你想要的商品" bindinput="bindInput"></input>
+        <input type="text" placeholder="请输入你想要的商品" bindinput="bindInput"
+        bindconfirm="bindConfirm"></input>
     </view>
     <view class="search_cancel" wx:if="{{ isShowBtn }}">取消</view>
 </view>
