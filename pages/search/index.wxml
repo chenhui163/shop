@@ -14,10 +14,10 @@
 <view class="history">
     <view class="history_title">
         <text>历史记录</text>
-        <icon type="clear" size="19"></icon>
+        <icon type="clear" size="19" bindtap="clearHistory"></icon>
     </view>
     <view class="history_list">
-        <navigator class="list_item" wx:for="{{ history }}"
+        <navigator class="list_item" wx:for="{{ history }}" wx:key="{{index}}"
         url="/pages/goods_list/index?query={{ item }}">{{ item }}</navigator>
     </view>
 </view>

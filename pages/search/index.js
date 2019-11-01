@@ -90,7 +90,12 @@ Page({
 
     // 清除历史记录
     clearHistory(){
-        console.log(222)
+        //本地的历史记录
+        wx.setStorageSync('search', []);
+        // 清除页面的历史记录
+        this.setData({
+            history: []
+        })
     }
 
 })
