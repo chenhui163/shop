@@ -78,6 +78,75 @@ Page({
                 wx.setStorageSync('consignee', this.data.consignee);
             }
         })
+    },
+
+    // 减少商品数量
+    reduceNumber(e){
+        // 获取当前点击的商品id
+        const { goods_id } = e.target.dataset;
+
+        // 遍历购物车列表
+        let newCart =  this.data.cart.map((v,i)=>{
+            // 找到该商品对象
+            if (v.goods_id === goods_id){
+                
+                // 如果该商品的数量是1，询问是否要删除
+                if(v.goods_number===1){
+                    wx.showModal({
+                        title: '提示',
+                        content: '询问是否要删除该商品？',
+                        success:(res)=> {
+                            if (res.confirm) {
+                                // 删除商品
+                                newCart.splice(i, 1);
+                                // 把商品列表赋值给data中的cart
+                                this.setData({
+                                    cart: newCart
+                                })
+                                // 把购物车列表重新存回本地
+                                wx.setStorageSync('cart', this.data.cart);
+                            } else if (res.cancel) {
+                                v.goods_number = 1;
+                                console.log(v.goods_number)
+                            }
+                        }
+                    })
+                }
+                if (v.goods_number>1){
+                    // 商品数量-1
+                    v.goods_number--;
+                }
+            }
+            return v;
+        })
+        // 把商品列表赋值给data中的cart
+        this.setData({
+            cart: newCart
+        })
+        // 把购物车列表重新存回本地
+        wx.setStorageSync('cart', this.data.cart);
+    },
+
+    // 增加商品数量
+    addNumber(e){
+        // 获取当前点击的商品id
+        const { goods_id } = e.target.dataset;
+        
+        // 遍历购物车列表
+        let newCart = this.data.cart.map((v, i) => {
+            // 找到该商品对象
+            if (v.goods_id === goods_id) {
+                // 商品数量-1
+                v.goods_number++;
+            }
+            return v;
+        })
+        // 把商品列表赋值给data中的cart
+        this.setData({
+            cart: newCart
+        })
+        // 把购物车列表重新存回本地
+        wx.setStorageSync('cart', this.data.cart);
     }
 
 })

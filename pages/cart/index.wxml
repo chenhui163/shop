@@ -46,9 +46,9 @@
                         <view class="text_choose">
                             <view>￥<text>{{ item.goods_price }}</text></view>
                             <view class="choose_count">
-                                <view>-</view>
+                                <view bindtap="reduceNumber" data-goods_id="{{item.goods_id}}">-</view>
                                 <text>{{ item.goods_number }}</text>
-                                <view>+</view>
+                                <view bindtap="addNumber" data-goods_id="{{item.goods_id}}">+</view>
                             </view>
                         </view>
                     </view>
