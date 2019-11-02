@@ -48,7 +48,7 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "dev",
+					"name": "pages/cart/index",
 					"pathName": "pages/cart/index",
 					"query": "",
 					"scene": null

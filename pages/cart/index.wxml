@@ -34,20 +34,20 @@
             <text class="iconfont icon-dianpu"></text>
             <text>优购生活馆</text>
         </view>
-        <view class="shop_goods">
+        <view class="shop_goods" wx:for="{{ cart }}" wx:key="{{ index }}">
             <view class="goods_item">
                 <view class="item_checked">
-                    <icon type="success" size="14 "></icon>
+                    <icon type="success" size="14 " color="{{ item.isChoose===true ? '#ff2d4a':'#999999' }}"></icon>
                 </view>
                 <view class="item_info">
-                    <image url="#" mode="scaleToFill"></image>
+                    <image src="{{ item.goods_logo }}" mode="scaleToFill"></image>
                     <view class="info_text">
-                        <text class="text_title">华为5G10核超时空智能手机，全天候全方位提供贴心个人管家服务，免除用户生活烦恼，优质生活，低价拥有，每个人都是自己的管理</text>
+                        <text class="text_title">{{ item.goods_name }}</text>
                         <view class="text_choose">
-                            <view>￥<text>999</text></view>
+                            <view>￥<text>{{ item.goods_price }}</text></view>
                             <view class="choose_count">
                                 <view>-</view>
-                                <text>1</text>
+                                <text>{{ item.goods_number }}</text>
                                 <view>+</view>
                             </view>
                         </view>
@@ -61,7 +61,7 @@
 <!-- 结算部分 -->
 <view class="orderForm">
     <view class="orderForm_check">
-        <icon type="success" size="14"></icon>
+        <icon type="success" size="14" color="#ff2d4a"></icon>
         <text>全选</text>
     </view>
     <view class="orderForm_total">

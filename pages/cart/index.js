@@ -8,7 +8,12 @@ Page({
         // 收货人信息
         consignee: {},
         // 是否显示添加地址，默认是true显示新增
-        isShowAddAddress: true
+        isShowAddAddress: true,
+
+        // 购物车列表
+        cart: [],
+        // 是否显示购物车为空，默认是true，显示为空
+        isCartEmpty: true
     },
 
     /**
@@ -27,6 +32,25 @@ Page({
                 isShowAddAddress: false
             })
         }
+
+        // 从本地获取购物车列表
+        let arr = wx.getStorageSync('cart') || [];
+        // 判断购物车列表是否为空
+        let result2 = (JSON.stringify(arr) === "[]");
+        // 如果不为空
+        if (!result2) {
+            // 对价格保留两位小数
+            let cart = arr.map(v=>{
+                v.goods_price = Number(v.goods_price).toFixed(2);
+                return v;
+            })
+            // 将购物车列表保存到data中
+            this.setData({
+                cart,
+                isCartEmpty: false
+            })
+        }
+
     },
 
     /**
