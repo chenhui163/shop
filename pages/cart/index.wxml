@@ -37,7 +37,7 @@
         <view class="shop_goods" wx:for="{{ cart }}" wx:key="{{ index }}">
             <view class="goods_item">
                 <view class="item_checked">
-                    <icon type="success" size="14 " color="{{ item.isChoose===true ? '#ff2d4a':'#999999' }}"></icon>
+                    <icon type="success" size="14 " color="{{ item.isChoose===true ? '#ff2d4a':'#999999' }}" bindtap="changeChoose" data-goods_id="{{item.goods_id}}"></icon>
                 </view>
                 <view class="item_info">
                     <image src="{{ item.goods_logo }}" mode="scaleToFill"></image>

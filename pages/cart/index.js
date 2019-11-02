@@ -147,6 +147,28 @@ Page({
         })
         // 把购物车列表重新存回本地
         wx.setStorageSync('cart', this.data.cart);
+    },
+
+    // 改变选中状态
+    changeChoose(e){
+        // 获取当前点击的商品id
+        const {goods_id} = e.target.dataset;
+
+        // 遍历购物车列表
+        let newCart = this.data.cart.map(v => {
+            // 找到该商品对象
+            if (v.goods_id === goods_id) {
+                // 将选中状态取反
+                v.isChoose = !v.isChoose;
+            }
+            return v;
+        })
+        // 把商品列表赋值给data中的cart
+        this.setData({
+            cart: newCart
+        })
+        // 把购物车列表重新存回本地
+        wx.setStorageSync('cart', this.data.cart);
     }
 
 })
