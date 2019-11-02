@@ -1,26 +1,26 @@
 <!--pages/cart/index.wxml-->
 
 <!-- 增加收货人信息提示 -->
-<view class="addConsignee">
+<view class="addConsignee" wx:if="{{ isShowAddAddress }}">
     <text>您还未设置收货人信息，</text>
-    <text class="newAddress">点击新增</text>
+    <text class="newAddress" bindtap="chooseAddress">点击新增</text>
 </view>
 
 <!-- 收货人信息部分 -->
-<view class="consignee">
+<view class="consignee" wx:else>
     <view class="consignee_contact">
         <view class="contact_name">
             <text>收货人:</text>
-            <text>陈</text>
+            <text>{{ consignee.userName }}</text>
         </view>
         <view class="contact_phone">
-            <text>18888888888</text>
+            <text>{{ consignee.telNumber }}</text>
             <text class="iconfont icon-arrow-right"></text>
         </view>
     </view>
     <view class="consignee_address">
         <text>收货地址:</text>
-        <text>广东省广州市天河区</text>
+        <text>{{ consignee.completeAddress }}</text>
     </view>
 </view>
 
