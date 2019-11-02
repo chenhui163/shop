@@ -44,7 +44,7 @@
         <button class="btn_kefu" open-type="contact"></button>
     </view>
     <view class="footer_btn">
-        <view class="btn_box">加入购物车</view>
-        <view class="btn_box">立即购买</view>
+        <view class="btn_box" bindtap="addCart">加入购物车</view>
+        <view class="btn_box" bindtap="addCart">立即购买</view>
     </view>
 </view>
