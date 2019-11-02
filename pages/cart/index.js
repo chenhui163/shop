@@ -59,6 +59,21 @@ Page({
             })
         }
 
+        // 遍历购物车列表
+        let newChoose = this.data.cart.filter(v => {
+            // 返回选中状态为true的商品
+            return v.isChoose === true;
+        })
+        // 声明变量存放判断结果
+        let isChooseAll;
+        // 判断选中的商品数组的是否和商品列表长度一致
+        newChoose.length === this.data.cart.length ? isChooseAll = true : isChooseAll = false;
+
+        // 将判断结果赋给data中的isChooseAll
+        this.setData({
+            isChooseAll,
+        })
+
         // 调用方法计算商品总价格，总个数
         this.computedTotalPrice();
     },
@@ -231,8 +246,6 @@ Page({
             })
         }
 
-        console.log(this.data.cart)
-
         // 把全选状态、商品列表赋值给data中的isChooseAll，cart
         this.setData({
             isChooseAll: status,
@@ -265,7 +278,7 @@ Page({
 
         // 将商品总价格，商品总个数的计算结果赋给data中的totalPrice和totalCount
         this.setData({
-            totalPrice,
+            totalPrice: Number(totalPrice).toFixed(2),
             totalCount
         })
     }
