@@ -13,7 +13,12 @@ Page({
         // 购物车列表
         cart: [],
         // 是否显示购物车为空，默认是true，显示为空
-        isCartEmpty: true
+        isCartEmpty: true,
+
+        // 商品总价格
+        totalPrice: 0,
+        // 商品总个数
+        totalCount: 0
     },
 
     /**
@@ -51,6 +56,8 @@ Page({
             })
         }
 
+        // 调用方法计算商品总价格，总个数
+        this.computedTotalPrice();
     },
 
     /**
@@ -105,6 +112,8 @@ Page({
                                 })
                                 // 把购物车列表重新存回本地
                                 wx.setStorageSync('cart', this.data.cart);
+                                // 调用方法计算商品总价格，总个数
+                                this.computedTotalPrice();
                             } else if (res.cancel) {
                                 v.goods_number = 1;
                                 console.log(v.goods_number)
@@ -125,6 +134,9 @@ Page({
         })
         // 把购物车列表重新存回本地
         wx.setStorageSync('cart', this.data.cart);
+
+        // 调用方法计算商品总价格，总个数
+        this.computedTotalPrice();
     },
 
     // 增加商品数量
@@ -147,6 +159,9 @@ Page({
         })
         // 把购物车列表重新存回本地
         wx.setStorageSync('cart', this.data.cart);
+
+        // 调用方法计算商品总价格，总个数
+        this.computedTotalPrice();
     },
 
     // 改变选中状态
@@ -169,6 +184,34 @@ Page({
         })
         // 把购物车列表重新存回本地
         wx.setStorageSync('cart', this.data.cart);
+
+        // 调用方法计算商品总价格，总个数
+        this.computedTotalPrice();
+    },
+
+    // 计算选中商品的总价格
+    computedTotalPrice(){
+        // 遍历购物车列表
+        let newCart = this.data.cart.filter(v => {
+            // 返回选中状态为true的商品
+            return v.isChoose === true;
+        })
+
+        // 初始选中商品的总价格，总个数为0
+        let totalPrice = 0;
+        let totalCount = 0;
+        // 遍历选中状态的数组
+        newCart.forEach(v=>{
+            // 计算选中商品的总价格，总个数
+            totalPrice += v.goods_price * v.goods_number;
+            totalCount += v.goods_number;
+        })
+
+        // 将商品总价格，商品总个数的计算结果赋给data中的totalPrice和totalCount
+        this.setData({
+            totalPrice,
+            totalCount
+        })
     }
 
 })

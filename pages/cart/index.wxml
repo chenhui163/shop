@@ -69,13 +69,13 @@
             <text>合计:</text>
             <text class="money_price">
                 <text>￥</text>
-                <text>19999</text>
+                <text>{{ totalPrice }}</text>
             </text>
         </view>
         <text>包含运费</text>
     </view>
     <view class="orderForm_btn">
         <text>结算</text>
-        <text>10</text>
+        <text>({{ totalCount }})</text>
     </view>
 </view>
