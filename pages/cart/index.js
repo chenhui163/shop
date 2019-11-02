@@ -28,12 +28,19 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        
+    },
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
         // 从本地获取地址信息
         let consignee = wx.getStorageSync('consignee') || {};
         // 判断本地的收货人信息对象consignee是否为空
         let result = (JSON.stringify(consignee) === "{}");
         // 如果不为空
-        if(!result){
+        if (!result) {
             // 将信息保存到data中
             this.setData({
                 consignee,
@@ -48,7 +55,7 @@ Page({
         // 如果不为空
         if (!result2) {
             // 对价格保留两位小数
-            let cart = arr.map(v=>{
+            let cart = arr.map(v => {
                 v.goods_price = Number(v.goods_price).toFixed(2);
                 return v;
             })
@@ -76,13 +83,6 @@ Page({
 
         // 调用方法计算商品总价格，总个数
         this.computedTotalPrice();
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
     },
 
     // 获取收货人地址
