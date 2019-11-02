@@ -61,7 +61,7 @@
 <!-- 结算部分 -->
 <view class="orderForm">
     <view class="orderForm_check">
-        <icon type="success" size="14" color="#ff2d4a"></icon>
+        <icon type="success" size="14" color="{{ isChooseAll===true ? '#ff2d4a':'#999999' }}" bindtap="changeChooseAll"></icon>
         <text>全选</text>
     </view>
     <view class="orderForm_total">
