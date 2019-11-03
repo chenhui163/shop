@@ -132,8 +132,11 @@
     text-align: center;
     line-height: 42rpx;
 }
-.choose_count text{
-    padding: 0 35rpx;
+.choose_count input{
+    padding: 0 10px;
+    width: 55px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 /* 结算部分样式 */

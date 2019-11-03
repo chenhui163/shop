@@ -187,6 +187,67 @@ Page({
         this.computedTotalPrice();
     },
 
+    // 监听输入框的变化
+    changeInput(e){
+        // 获取商品id，input输入框的值
+        const {goods_id} = e.target.dataset;
+        const value = +e.detail.value;
+
+        // 判断是否只包含数字
+        // 如果是数字，向下取整并返回；如果不是，返回NaN
+        let res = Math.floor(value.toString());
+        
+        // 如果res是0或者NaN，那么res的值变为1，否则是本身
+        // （该行代码会产生输入0失败问题，因此弃用）
+        let goods_number = res ? res : 0 ;
+
+        // 遍历购物车列表
+        let newCart = this.data.cart.map(v => {
+            // 找到该商品对象
+            if (v.goods_id === goods_id) {
+                // 修改商品的数量
+                v.goods_number = res;
+            }
+            return v;
+        })
+        // 把商品列表赋值给data中的cart
+        this.setData({
+            cart: newCart
+        })
+    },
+
+    // 输入框失去焦点时触发
+    blurInput(e){
+        const { goods_id } = e.target.dataset;
+        const value = +e.detail.value;
+        
+        // 判断是否只包含数字
+        // 如果是数字，向下取整并返回；如果不是，返回NaN
+        let res = Math.floor(value.toString());
+
+        // 如果res是0或者NaN，那么res的值变为1，否则是本身
+        let goods_number = res ? res : 1 ;
+
+        // 遍历购物车列表
+        let newCart = this.data.cart.map(v => {
+            // 找到该商品对象
+            if (v.goods_id === goods_id) {
+                // 修改商品的数量
+                v.goods_number = goods_number;
+            }
+            return v;
+        })
+        // 把商品列表赋值给data中的cart
+        this.setData({
+            cart: newCart
+        })
+        // 把购物车列表重新存回本地
+        wx.setStorageSync('cart', this.data.cart);
+
+        // 调用方法计算商品总价格，总个数
+        this.computedTotalPrice();
+    },
+
     // 改变选中状态
     changeChoose(e){
         // 获取当前点击的商品id
