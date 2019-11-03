@@ -1,7 +1,7 @@
 <!--pages/cart/index.wxml-->
 
 <!-- 购物车不为空的页面结构-开始 -->
-<view>
+<view wx:if="{{ !isCartEmpty }}">
 
     <!-- 增加收货人信息提示 -->
 <view class="addConsignee" wx:if="{{ isShowAddAddress }}">
@@ -87,7 +87,7 @@
 <!-- 购物车不为空的页面结构-结束 -->
 
 <!-- 提示购物车为空 -->
-<view class="tips">
+<view class="tips" wx:if="{{ isCartEmpty }}">
     <image class="tips_image" src="../../images/cart_empty@2x.png"></image>
     <view class="tips_title">
         <text>购物车空空如也，赶快去</text>

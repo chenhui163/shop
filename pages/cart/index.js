@@ -13,7 +13,7 @@ Page({
         // 购物车列表
         cart: [],
         // 是否显示购物车为空，默认是true，显示为空
-        isCartEmpty: true,
+        isCartEmpty: null,
 
         // 商品总价格
         totalPrice: 0,
@@ -63,6 +63,11 @@ Page({
             this.setData({
                 cart,
                 isCartEmpty: false
+            })
+        }else{
+            // 设置购物车是空的
+            this.setData({
+                isCartEmpty: true
             })
         }
 
