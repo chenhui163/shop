@@ -29,6 +29,7 @@
 
 <!-- 商品富文本信息 -->
 <rich-text class="rich_text" nodes="{{ info.goods_introduce }}"></rich-text>
+<view class="rich_text_footer"></view>
 
 <!-- 底部功能栏 -->
 <view class="footer">
