@@ -1,6 +1,9 @@
 <!--pages/cart/index.wxml-->
 
-<!-- 增加收货人信息提示 -->
+<!-- 购物车不为空的页面结构-开始 -->
+<view>
+
+    <!-- 增加收货人信息提示 -->
 <view class="addConsignee" wx:if="{{ isShowAddAddress }}">
     <text>您还未设置收货人信息，</text>
     <text class="newAddress" bindtap="chooseAddress">点击新增</text>
@@ -77,5 +80,18 @@
     <view class="orderForm_btn">
         <text>结算</text>
         <text>({{ totalCount }})</text>
+    </view>
+</view>
+
+</view>
+<!-- 购物车不为空的页面结构-结束 -->
+
+<!-- 提示购物车为空 -->
+<view class="tips">
+    <image class="tips_image" src="../../images/cart_empty@2x.png"></image>
+    <view class="tips_title">
+        <text>购物车空空如也，赶快去</text>
+        <navigator url="/pages/category/index" open-type="switchTab">添加商品</navigator>
+        <text>吧</text>
     </view>
 </view>
