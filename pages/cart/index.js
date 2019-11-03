@@ -129,14 +129,8 @@ Page({
                             if (res.confirm) {
                                 // 删除商品
                                 newCart.splice(i, 1);
-                                // 把商品列表赋值给data中的cart
-                                this.setData({
-                                    cart: newCart
-                                })
-                                // 把购物车列表重新存回本地
-                                wx.setStorageSync('cart', this.data.cart);
-                                // 调用方法计算商品总价格，总个数
-                                this.computedTotalPrice();
+                                // 重新赋值购物车列表、计算商品总价格和总个数
+                                this.cartStorageTotal(newCart);
                             } else if (res.cancel) {
                                 v.goods_number = 1;
                                 console.log(v.goods_number)
@@ -151,15 +145,9 @@ Page({
             }
             return v;
         })
-        // 把商品列表赋值给data中的cart
-        this.setData({
-            cart: newCart
-        })
-        // 把购物车列表重新存回本地
-        wx.setStorageSync('cart', this.data.cart);
-
-        // 调用方法计算商品总价格，总个数
-        this.computedTotalPrice();
+        
+        // 重新赋值购物车列表、计算商品总价格和总个数
+        this.cartStorageTotal(newCart);
     },
 
     // 增加商品数量
@@ -176,15 +164,9 @@ Page({
             }
             return v;
         })
-        // 把商品列表赋值给data中的cart
-        this.setData({
-            cart: newCart
-        })
-        // 把购物车列表重新存回本地
-        wx.setStorageSync('cart', this.data.cart);
-
-        // 调用方法计算商品总价格，总个数
-        this.computedTotalPrice();
+        
+        // 重新赋值购物车列表、计算商品总价格和总个数
+        this.cartStorageTotal(newCart);
     },
 
     // 监听输入框的变化
@@ -237,15 +219,9 @@ Page({
             }
             return v;
         })
-        // 把商品列表赋值给data中的cart
-        this.setData({
-            cart: newCart
-        })
-        // 把购物车列表重新存回本地
-        wx.setStorageSync('cart', this.data.cart);
 
-        // 调用方法计算商品总价格，总个数
-        this.computedTotalPrice();
+        // 重新赋值购物车列表、计算商品总价格和总个数
+        this.cartStorageTotal(newCart);
     },
 
     // 改变选中状态
@@ -262,15 +238,9 @@ Page({
             }
             return v;
         })
-        // 把商品列表赋值给data中的cart
-        this.setData({
-            cart: newCart
-        })
-        // 把购物车列表重新存回本地
-        wx.setStorageSync('cart', this.data.cart);
 
-        // 调用方法计算商品总价格，总个数
-        this.computedTotalPrice();
+        // 重新赋值购物车列表、计算商品总价格和总个数
+        this.cartStorageTotal(newCart);
 
         // 遍历购物车列表
         let newChoose = this.data.cart.filter(v => {
@@ -312,16 +282,13 @@ Page({
             })
         }
 
-        // 把全选状态、商品列表赋值给data中的isChooseAll，cart
+        // 把全选状态赋值给data中的isChooseAll
         this.setData({
             isChooseAll: status,
-            cart: newCart
         })
-        // 把购物车列表重新存回本地
-        wx.setStorageSync('cart', this.data.cart);
 
-        // 调用方法计算商品总价格，总个数
-        this.computedTotalPrice();
+        // 重新赋值购物车列表、计算商品总价格和总个数
+        this.cartStorageTotal(newCart);
     },
 
     // 计算选中商品的总价格
@@ -347,6 +314,22 @@ Page({
             totalPrice: Number(totalPrice).toFixed(2),
             totalCount
         })
+    },
+
+    /**
+     * 封装函数：重新赋值购物车列表、把购物车列表存回本地、计算商品总价格和总个数
+     */
+    cartStorageTotal(newCart){
+        // 把商品列表赋值给data中的cart
+        this.setData({
+            cart: newCart
+        })
+
+        // 把购物车列表重新存回本地
+        wx.setStorageSync('cart', this.data.cart);
+
+        // 调用方法计算商品总价格，总个数
+        this.computedTotalPrice();
     }
 
 })
