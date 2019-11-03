@@ -32,6 +32,14 @@ Page({
     },
 
     /**
+     * 生命周期函数--监听页面隐藏
+     */
+    onHide(){
+        // 把购物车列表重新存回本地
+        wx.setStorageSync('cart', this.data.cart);
+    },
+
+    /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
@@ -317,16 +325,13 @@ Page({
     },
 
     /**
-     * 封装函数：重新赋值购物车列表、把购物车列表存回本地、计算商品总价格和总个数
+     * 封装函数：重新赋值购物车列表、计算商品总价格和总个数
      */
     cartStorageTotal(newCart){
         // 把商品列表赋值给data中的cart
         this.setData({
             cart: newCart
         })
-
-        // 把购物车列表重新存回本地
-        wx.setStorageSync('cart', this.data.cart);
 
         // 调用方法计算商品总价格，总个数
         this.computedTotalPrice();
