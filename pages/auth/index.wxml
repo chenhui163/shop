@@ -1,3 +1,18 @@
 <!--pages/auth/index.wxml-->
 
-<text>pages/auth/index.wxml</text>
+<view class="container">
+
+    <!-- 用户头像 -->
+    <view class="image">
+        <image src="../../images/icon_me@3x.png"></image>
+    </view>
+
+    <view class="text">
+        <view>申请获取一下权限</view>
+        <view><text>▪</text>获取您的公开信息(昵称，头像等)</view>
+    </view>
+
+    <!-- 获取授权按钮 -->
+    <button type="primary">授权登录</button>
+
+</view>

@@ -48,8 +48,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/cart/index",
-					"pathName": "pages/cart/index",
+					"name": "pages/auth/index",
+					"pathName": "pages/auth/index",
 					"query": "",
 					"scene": null
 				}

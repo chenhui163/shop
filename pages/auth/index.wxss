@@ -1,1 +1,37 @@
 /* pages/auth/index.wxss */
+
+.container{
+    padding: 0 50rpx;
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    margin-top: 150rpx;
+    padding-bottom: 80rpx;
+    border-bottom: 1px solid #9b9b9b;
+}
+image{
+    width: 150rpx;
+    height: 150rpx;
+    background: orangered;
+    border-radius: 50px;
+}
+
+.text{
+    padding: 80rpx 0 100rpx 0;
+    font-size: 16px;
+    color: #333;
+}
+.text view:last-child{
+    margin-top: 30rpx;
+    font-size: 14px;
+    color: #9b9b9b;
+}
+.text view:last-child text{
+    margin-right: 30rpx;
+}
+
+button{
+    border-radius: 50px;
+}
