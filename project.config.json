@@ -48,9 +48,9 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "dev",
-					"pathName": "pages/goods_detail/index",
-					"query": "goods_id=24622",
+					"name": "pages/cart/index",
+					"pathName": "pages/cart/index",
+					"query": "",
 					"scene": null
 				}
 			]

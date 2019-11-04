@@ -299,6 +299,26 @@ Page({
         this.cartStorageTotal(newCart);
     },
 
+    // 点击结算按钮
+    clearing(){
+
+        // 从本地获取token
+        const token = wx.getStorageSync("token") || "";
+
+        // 判断本地是否有token
+        if (token){
+            // 本地有token，直接跳转到订单确认页
+            wx.navigateTo({
+                url: "/pages/order_confirm/index"
+            })
+        }else{
+            // 没有token，就跳转到获取授权页
+            wx.navigateTo({
+                url: "/pages/auth/index"
+            })
+        }
+    },
+
     // 计算选中商品的总价格
     computedTotalPrice(){
         // 遍历购物车列表

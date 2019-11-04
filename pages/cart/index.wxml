@@ -77,7 +77,7 @@
         </view>
         <text>包含运费</text>
     </view>
-    <view class="orderForm_btn">
+    <view class="orderForm_btn" bindtap="clearing">
         <text>结算</text>
         <text>({{ totalCount }})</text>
     </view>
