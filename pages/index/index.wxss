@@ -80,7 +80,7 @@
     显示到底部样式
 */
 .showBottom{
-    padding: 21rpx 0 190rpx 0;
+    padding: 21rpx 0 100rpx 0;
     background: #f4f4f4;
     text-align: center;
 }

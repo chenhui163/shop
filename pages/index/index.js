@@ -10,7 +10,10 @@ Page({
         nav:[],
 
         // 楼层数据
-        floors:[]
+        floors:[],
+
+        // 是否显示到底部提示
+        isToFooter: false
     },
 
     onLoad(){
@@ -40,8 +43,10 @@ Page({
             url: "https://api.zbztb.cn/api/public/v1/home/floordata"
         }).then(res => {
             const { message } = res.data;
+            // 楼层数据请求完之后才显示到底部
             this.setData({
-                floors: message
+                floors: message,
+                isToFooter: true
             })
         })
 

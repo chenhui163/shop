@@ -43,7 +43,7 @@
 </view>
 
 <!-- 显示底部部分 -->
-<view class="showBottom">
+<view class="showBottom" wx:if="{{ isToFooter }}">
     <text class="iconfont icon"></text>
     我是有底线的！
 </view>
