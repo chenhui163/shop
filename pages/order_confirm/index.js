@@ -5,6 +5,9 @@ Page({
      * 页面的初始数据
      */
     data: {
+        // 收货人信息
+        consignee: "",
+
         // 已选择的商品
         select: [],
         // 实付款
@@ -16,6 +19,9 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+
+        // 获取本地的收货人信息
+        const consignee = wx.getStorageSync("consignee");
 
         // 从本地获取购物车数据
         const goods = wx.getStorageSync("cart");
@@ -31,9 +37,9 @@ Page({
         
         // 将已选择的商品添加到data中
         this.setData({
+            consignee,
             select,
             totalPrice: Number(totalPrice).toFixed(2)
         })
-
     }
 })

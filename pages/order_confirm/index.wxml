@@ -5,16 +5,16 @@
     <view class="consignee_contact">
         <view class="contact_name">
             <text>收货人:</text>
-            <text>陈</text>
+            <text>{{ consignee.userName }}</text>
         </view>
         <view class="contact_phone">
             <text>联系方式:</text>
-            <text>17888888888</text>
+            <text>{{ consignee.telNumber }}</text>
         </view>
     </view>
     <view class="consignee_address">
         <text>收货地址:</text>
-        <text>广东省广州市调和去</text>
+        <text>{{ consignee.completeAddress }}</text>
     </view>
 </view>
 
