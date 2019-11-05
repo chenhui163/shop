@@ -30,6 +30,13 @@ Page({
                     const { token } = res.data.message;
                     // 保存到本地
                     wx.setStorageSync("token", token);
+
+                    // 跳转到订单确认页
+                    if (token){
+                        wx.navigateTo({
+                            url: "/pages/order_confirm/index",
+                        })
+                    }
                 })
             }
         })

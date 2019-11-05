@@ -1,1 +1,101 @@
 /* pages/order_confirm/index.wxss */
+
+/* 收件人信息部分样式 */
+.consignee{
+    padding: 0 18rpx;
+    font-size: 15px;
+    color: #333333;
+}
+.consignee_contact{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 45rpx 0 55rpx 0 ;
+}
+.contact_name text:first-child{
+    margin-right: 25rpx;
+}
+.contact_phone text:first-child{
+    margin-right: 25rpx;
+}
+.consignee_address{
+    margin-bottom: 30rpx;
+}
+.consignee_address text{
+    margin-right: 25rpx;
+}
+
+/* 分隔条 */
+.separation_image{
+    width: 100%;
+    height: 14rpx;
+}
+
+/* 购物车商品列表样式 */
+.goods{
+    margin-bottom: 200rpx;
+}
+.goods_shop{
+    border-top: 20rpx solid #f4f4f4;
+}
+.shop_name{
+    padding-left: 33rpx;
+    height: 87rpx;
+    line-height: 87rpx;
+    font-size: 15px;
+    color: #333333;
+    border-bottom: 1px solid #dddddd;
+}
+.shop_name text:first-child{
+    margin-right: 16rpx;
+    font-size: 14px;
+    color: #9e9e9e;
+}
+
+.goods_item{
+    display: flex;
+    padding: 0 25rpx;
+    height: 205rpx;
+}
+.item_info{
+    flex: 1;
+    display: flex;
+    padding: 25rpx 18rpx 18rpx 0;
+    border-bottom: 1px solid #dddddd;
+}
+.item_info image{
+    width: 160rpx;
+    height: 160rpx;
+    background: orangered;
+}
+.info_text{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 24rpx;
+}
+.text_title{
+    font-size: 14px;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.text_price{
+    display: flex;
+}
+.text_price>view:first-child{
+    margin-right: 4px;
+    font-size: 10px;
+    color: #eb4450;
+    vertical-align: middle;
+}
+.text_price>view:first-child>text{
+    font-size: 14px;
+}
+.text_price>view:last-child>text{
+    margin-left: 20rpx;
+}
