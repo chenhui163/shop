@@ -29,16 +29,16 @@
             <text>优购生活馆</text>
         </view>
         <view class="shop_goods">
-            <view class="goods_item">
+            <view class="goods_item" wx:for="{{ select }}" wx:key="{{index}}">
                 <view class="item_info">
-                    <image src="#" mode="scaleToFill"></image>
+                    <image src="{{item.goods_logo}}" mode="scaleToFill"></image>
                     <view class="info_text">
-                        <text class="text_title">商品名称</text>
+                        <text class="text_title">{{item.goods_name}}</text>
                         <view class="text_price">
-                            <view>￥<text>999</text></view>
+                            <view>￥<text>{{item.goods_price}}</text></view>
                             <view>
                                 <text>×</text>
-                                <text>1</text>
+                                <text>{{item.goods_number}}</text>
                             </view>
                         </view>
                     </view>
@@ -53,7 +53,7 @@
     <view class="submit_text">
         <text>实付款:</text>
         <text>￥</text>
-        <text>999</text>
+        <text>{{totalPrice}}</text>
     </view>
     <view class="submit_btn">提交订单</view>
 </view>
