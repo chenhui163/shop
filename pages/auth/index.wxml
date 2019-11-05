@@ -13,6 +13,7 @@
     </view>
 
     <!-- 获取授权按钮 -->
-    <button type="primary">授权登录</button>
+    <button type="primary" open-type="getUserInfo" 
+    bindgetuserinfo="onGotUserInfo">授权登录</button>
 
 </view>
